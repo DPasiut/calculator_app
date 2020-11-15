@@ -26,5 +26,4 @@ class TextView extends Component {
   }
 }
 
-
 export default TextView;

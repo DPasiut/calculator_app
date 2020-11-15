@@ -18,8 +18,8 @@ export default class App extends Component {
     };
 
     this.state = {
-      buffer: '',
-      displayValue: '0',
+      buffer: "",
+      displayValue: "0",
       operator: null,
       myValue: '0',
       isDot: false,
@@ -175,6 +175,7 @@ export default class App extends Component {
       case '.':
         if (!isDot) {
           this.setState({
+            buffer: this.buffer + '.',
             displayValue: displayValue + input,
             isDot: true,
             errorText: ' ',
@@ -205,6 +206,7 @@ export default class App extends Component {
         break;
       case 'AC':
         this.setState({
+          buffer: '',
           displayValue: '0',
           operator: null,
           myValue: '0',
