@@ -7,7 +7,7 @@ class TextView extends Component {
     return (
       <View
         style={{
-          backgroundColor: '#8f919d',
+          backgroundColor: 'white',
           height: boxHeight,
           justifyContent: 'center',
           alignItems: 'flex-end',
@@ -17,7 +17,7 @@ class TextView extends Component {
             fontSize: size,
             fontWeight: 'bold',
             margin: 10,
-            color: fontColor,
+            color: 'black',
           }}>
           {title}
         </Text>

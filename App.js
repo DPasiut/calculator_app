@@ -16,7 +16,9 @@ export default class App extends Component {
       const dim = Dimensions.get('window');
       return dim.height > dim.width;
     };
+
     this.state = {
+      buffer: '',
       displayValue: '0',
       operator: null,
       myValue: '0',
@@ -28,56 +30,56 @@ export default class App extends Component {
     };
 
     this.portraitButtons = [
-      {key: 1, title: 'AC', color: '#787d8c', size: '25%'},
+      {key: 1, title: 'AC', color: 'orange', size: '25%'},
       {key: 2, title: ' ', color: '#787d8c', size: '50%'},
-      {key: 3, title: '/', color: '#1e5169', size: '25%'},
+      {key: 3, title: '/', color: 'orange', size: '25%'},
       {key: 4, title: '7', color: '#7d8491', size: '25%'},
       {key: 5, title: '8', color: '#7d8491', size: '25%'},
       {key: 6, title: '9', color: '#7d8491', size: '25%'},
-      {key: 7, title: '*', color: '#1e5169', size: '25%'},
+      {key: 7, title: '*', color: 'orange', size: '25%'},
       {key: 8, title: '4', color: '#7d8491', size: '25%'},
       {key: 9, title: '6', color: '#7d8491', size: '25%'},
       {key: 10, title: '5', color: '#7d8491', size: '25%'},
-      {key: 11, title: '-', color: '#1e5169', size: '25%'},
+      {key: 11, title: '-', color: 'orange', size: '25%'},
       {key: 12, title: '1', color: '#7d8491', size: '25%'},
       {key: 13, title: '2', color: '#7d8491', size: '25%'},
       {key: 14, title: '3', color: '#7d8491', size: '25%'},
-      {key: 15, title: '+', color: '#1e5169', size: '25%'},
+      {key: 15, title: '+', color: 'orange', size: '25%'},
       {key: 16, title: '0', color: '#7d8491', size: '50%'},
       {key: 17, title: '.', color: '#7d8491', size: '25%'},
-      {key: 18, title: '=', color: '#1e5169', size: '25%'},
+      {key: 18, title: '=', color: 'orange', size: '25%'},
     ];
 
     this.landscapeButtons = [
       {key: 1, title: '√x', color: '#787d8c', size: String(100 / 6) + '%'},
       {key: 2, title: 'log10', color: '#787d8c', size: String(100 / 6) + '%'},
-      {key: 3, title: '+/-', color: '#787d8c', size: String(100 / 6) + '%'},
-      {key: 4, title: 'AC', color: '#787d8c', size: String(100 / 6) + '%'},
-      {key: 5, title: '%', color: '#787d8c', size: String(100 / 6) + '%'},
-      {key: 6, title: '/', color: '#1e5169', size: String(100 / 6) + '%'},
+      {key: 3, title: '+/-', color: 'orange', size: String(100 / 6) + '%'},
+      {key: 4, title: 'AC', color: 'orange', size: String(100 / 6) + '%'},
+      {key: 5, title: '%', color: 'orange', size: String(100 / 6) + '%'},
+      {key: 6, title: '/', color: 'orange', size: String(100 / 6) + '%'},
       {key: 7, title: 'e^x', color: '#787d8c', size: String(100 / 6) + '%'},
       {key: 8, title: '10^x', color: '#787d8c', size: String(100 / 6) + '%'},
       {key: 9, title: '7', color: '#7d8491', size: String(100 / 6) + '%'},
       {key: 10, title: '8', color: '#7d8491', size: String(100 / 6) + '%'},
       {key: 11, title: '9', color: '#7d8491', size: String(100 / 6) + '%'},
-      {key: 12, title: '*', color: '#1e5169', size: String(100 / 6) + '%'},
+      {key: 12, title: '*', color: 'orange', size: String(100 / 6) + '%'},
       {key: 13, title: 'ln(x)', color: '#787d8c', size: String(100 / 6) + '%'},
       {key: 14, title: 'x!', color: '#787d8c', size: String(100 / 6) + '%'},
       {key: 15, title: '4', color: '#7d8491', size: String(100 / 6) + '%'},
       {key: 16, title: '5', color: '#7d8491', size: String(100 / 6) + '%'},
       {key: 17, title: '6', color: '#7d8491', size: String(100 / 6) + '%'},
-      {key: 18, title: '-', color: '#1e5169', size: String(100 / 6) + '%'},
+      {key: 18, title: '-', color: 'orange', size: String(100 / 6) + '%'},
       {key: 19, title: 'e', color: '#787d8c', size: String(100 / 6) + '%'},
       {key: 20, title: 'x^2', color: '#787d8c', size: String(100 / 6) + '%'},
       {key: 21, title: '1', color: '#7d8491', size: String(100 / 6) + '%'},
       {key: 22, title: '2', color: '#7d8491', size: String(100 / 6) + '%'},
       {key: 23, title: '3', color: '#7d8491', size: String(100 / 6) + '%'},
-      {key: 24, title: '+', color: '#1e5169', size: String(100 / 6) + '%'},
+      {key: 24, title: '+', color: 'orange', size: String(100 / 6) + '%'},
       {key: 25, title: 'pi', color: '#787d8c', size: String(100 / 6) + '%'},
       {key: 26, title: 'x^3', color: '#787d8c', size: String(100 / 6) + '%'},
       {key: 27, title: '0', color: '#7d8491', size: String(100 / 3) + '%'},
       {key: 28, title: '.', color: '#7d8491', size: String(100 / 6) + '%'},
-      {key: 29, title: '=', color: '#1e5169', size: String(100 / 6) + '%'},
+      {key: 29, title: '=', color: 'orange', size: String(100 / 6) + '%'},
     ];
 
     Dimensions.addEventListener('change', () => {
@@ -339,6 +341,12 @@ export default class App extends Component {
           <TextView
             title={this.state.errorText}
             fontColor={'#a50404'}
+            size={20}
+            boxHeight={'30%'}
+          />
+          <TextView
+            title={this.state.buffer}
+            fontColor={'#2137BD'}
             size={20}
             boxHeight={'30%'}
           />
